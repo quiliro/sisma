@@ -1,0 +1,2 @@
+module IndustriasHelper
+end

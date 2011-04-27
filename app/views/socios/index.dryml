@@ -1,0 +1,13 @@
+<!-- aqui te añadí un par de cosas:
+- el campo created_at con un formato de fecha corto
+- el tag controls que te añada la posibilidad de editar y borrar una ficha directamente en la vista indice (era lo que
+ me habias pedido)
+cambiale los campo como prefieres -->
+<index-page>
+  <collection: replace>
+    <table-plus fields="this, apellido, direccion, telefono, created_at">
+      <created-at-view:><view format="%d %B %Y"/></created-at-view:>
+      <controls:/>
+    </table-plus>
+  </collection:>
+</index-page>

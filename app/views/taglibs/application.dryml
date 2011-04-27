@@ -7,3 +7,43 @@
 <include src="taglibs/auto/rapid/forms"/>
 
 <set-theme name="clean"/>
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item with="&Socio"><ht key="socio.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Ciudad"><ht key="ciudad.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&CamionSocio"><ht key="camion_socio.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+  </navigation>
+</def>
+
+<!-- esto esta en la repo de hobo, todavia no en el hobo gem que tienes instalado localmente
+asi que lo vas a dejar aqui hasta que no publique la v. 1.3.0.RC -->
+<def tag="input" for="date" attrs="use-month-numbers, use-short-month, add-month-numbers, use-month-names, date-separator, start-year, end-year, discard-day, discard-month, discard-year, order, include-blank, default, disabled, prompt, prefix">
+<% order = order.nil? ? [:year, :month, :day] : comma_split(order).*.to_sym -%>
+<%= select_date(this || current_time,
+                (all_attributes - attributes.keys).reverse_merge(:prefix => param_name_for_this).merge(:order => order),
+                attributes - [:name]) %>
+</def>
+
+<!-- esto te va a cambiar el input de las fechas en toda la aplicación empezando del año 1940 o lo que quieres
+quita este tag en caso quieres solo modificar la vista de la fecha de nacimientos de los socios (ver abajo) -->
+<extend tag='input' for='date'>
+  <old-input merge order="day,month,year" start-year="&1940" />
+</extend>
+
+
+<!-- esto te cambia solamente la pagina del form de los socios, puedes ver que le cambié la label (solo para
+demostración, ti hace lo que quieras en tu aplicación) y la view (o sea el selector de fecha) que es lo que pediste.
+quita esto tag si vas a usar el otro arriba -->
+<extend tag="new-page" for="Socio">
+  <old-new-page merge>
+    <form:>
+      <field-list:>
+        <fecha-de-nacimiento-label:>Nacido el</fecha-de-nacimiento-label:>
+        <fecha-de-nacimiento-view:>
+          <input start-year="&1940" />
+        </fecha-de-nacimiento-view:>
+      </field-list:>
+    </form:>
+  </old-new-page>
+</extend>
