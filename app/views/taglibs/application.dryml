@@ -11,8 +11,13 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item with="&Socio"><ht key="socio.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&TipoDeCamion"><ht key="tipo_de_camion.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Industria"><ht key="industria.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Marca"><ht key="marca.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&Ciudad"><ht key="ciudad.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&CamionSocio"><ht key="camion_socio.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Empresa"><ht key="empresa.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Departamento"><ht key="departamento.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&Calificacion"><ht key="calificacion.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
