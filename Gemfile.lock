@@ -1,3 +1,21 @@
+GIT
+  remote: git://github.com/tablatom/hobo
+  revision: 7cc99314bf285eaca475ba81fe961995e967d411
+  branch: rails3
+  specs:
+    dryml (1.3.0.RC)
+      actionpack (~> 3.0.0)
+      hobo_support (= 1.3.0.RC)
+    hobo (1.3.0.RC)
+      dryml (= 1.3.0.RC)
+      hobo_fields (= 1.3.0.RC)
+      hobo_support (= 1.3.0.RC)
+      will_paginate (>= 3.0.pre)
+    hobo_fields (1.3.0.RC)
+      hobo_support (= 1.3.0.RC)
+    hobo_support (1.3.0.RC)
+      rails (~> 3.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -30,22 +48,8 @@ GEM
     activesupport (3.0.3)
     arel (2.0.6)
     builder (2.1.2)
-    dryml (1.3.0.pre24)
-      actionpack (>= 3.0.0)
-      hobo_support (= 1.3.0.pre24)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    hobo (1.3.0.pre24)
-      dryml (= 1.3.0.pre24)
-      hobo_fields (= 1.3.0.pre24)
-      hobo_support (= 1.3.0.pre24)
-      rails (>= 3.0.0)
-      will_paginate (>= 3.0.pre)
-    hobo_fields (1.3.0.pre24)
-      hobo_support (= 1.3.0.pre24)
-      rails (>= 3.0.0)
-    hobo_support (1.3.0.pre24)
-      rails (>= 3.0.0)
     i18n (0.5.0)
     mail (2.2.12)
       activesupport (>= 2.3.6)
@@ -84,6 +88,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  hobo (>= 1.3.0.pre24)
+  hobo!
   rails (= 3.0.3)
   sqlite3-ruby

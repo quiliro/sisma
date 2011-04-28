@@ -52,3 +52,13 @@ quita esto tag si vas a usar el otro arriba -->
     </form:>
   </old-new-page>
 </extend>
+
+<extend tag="page">
+  <old-page merge>
+    <footer:>
+      <a href="&admin_users_url" if="&current_user.administrator?">
+        <t key="hobo.admin.subsite_name">Admin</t>
+      </a>
+    </footer:>
+  </old-page>
+</extend>

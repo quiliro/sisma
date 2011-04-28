@@ -29,4 +29,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "hobo", ">= 1.3.0.pre24"
+gem "hobo", :git => "git://github.com/tablatom/hobo", :branch => 'rails3'
